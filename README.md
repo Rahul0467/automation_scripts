@@ -1,1 +1,1 @@
-# automation_scripts
+This script is for sending an email
