@@ -1,0 +1,9 @@
+from sqlalchemy import create_engine
+import pandas as pd
+import os
+
+db_user = os.environ.get("db_user")
+db_password = os.environ.get("db_password")
+my_conn = create_engine("mysql://" + db_user + ":" + db_password +"@localhost/portfolioproject")
+df = pd.read_excel("C:\\Users\\rahul\\pandas\\unique id.xlsx", index_col=0, header=0)
+df.to_sql("uniqueid", con=my_conn)
